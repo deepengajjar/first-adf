@@ -1,0 +1,9 @@
+{
+	"name": "adf-deepen-dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8bc63ef3-2a8b-4e2b-82ce-0efe4a8acea3",
+		"tenantId": "69e72533-f7d2-4fba-9c1b-db313c72197a"
+	}
+}

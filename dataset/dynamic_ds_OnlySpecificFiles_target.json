@@ -1,0 +1,98 @@
+{
+	"name": "dynamic_ds_OnlySpecificFiles_target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TargetFileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().TargetFileName",
+					"type": "Expression"
+				},
+				"folderPath": "adls-target-files",
+				"fileSystem": "source-container"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PromotionKey",
+				"type": "String"
+			},
+			{
+				"name": "PromotionAlternateKey",
+				"type": "String"
+			},
+			{
+				"name": "EnglishPromotionName",
+				"type": "String"
+			},
+			{
+				"name": "SpanishPromotionName",
+				"type": "String"
+			},
+			{
+				"name": "FrenchPromotionName",
+				"type": "String"
+			},
+			{
+				"name": "DiscountPct",
+				"type": "String"
+			},
+			{
+				"name": "EnglishPromotionType",
+				"type": "String"
+			},
+			{
+				"name": "SpanishPromotionType",
+				"type": "String"
+			},
+			{
+				"name": "FrenchPromotionType",
+				"type": "String"
+			},
+			{
+				"name": "EnglishPromotionCategory",
+				"type": "String"
+			},
+			{
+				"name": "SpanishPromotionCategory",
+				"type": "String"
+			},
+			{
+				"name": "FrenchPromotionCategory",
+				"type": "String"
+			},
+			{
+				"name": "StartDate",
+				"type": "String"
+			},
+			{
+				"name": "EndDate",
+				"type": "String"
+			},
+			{
+				"name": "MinQty",
+				"type": "String"
+			},
+			{
+				"name": "MaxQty",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
